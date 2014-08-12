@@ -4,8 +4,8 @@
 //! \file
 //! \brief This file contains the untemplated functions used for dealing with random number generation.
 
-#include "rng.hh"
-#include "smctc.hh"
+#include "smctc/rng.hh"
+#include "smctc/smctc.hh"
 
 namespace smc
 {
