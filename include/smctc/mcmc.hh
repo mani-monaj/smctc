@@ -94,7 +94,7 @@ std::vector<std::function<int(long, particle<Space> &, rng*)>*> mcmc_moves<Space
     std::vector<mcmc_moves<Space>::mcmc_fn*> result;
     result.reserve(n);
 
-    assert(moves.size() >= 0);
+    //assert(moves.size() >= 0);
     assert(moves.size() == weights.size());
     if(moves.size() == 1) return std::vector<mcmc_moves<Space>::mcmc_fn*>(n, &(moves[0]));
 
