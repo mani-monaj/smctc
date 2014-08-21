@@ -18,6 +18,6 @@ set(SMCTC_SOURCE_FILES
   src/rng.cc
   src/smc-exception.cc)
 
-add_library(smctc STATIC
+add_library(smctc SHARED
             ${SMCTC_SOURCE_FILES})
 target_link_libraries(smctc ${GSL_LIBRARIES})
