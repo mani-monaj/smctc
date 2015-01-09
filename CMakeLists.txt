@@ -13,6 +13,18 @@ endif()
 
 include_directories(include)
 
+set(SMCTC_HEADER_FILES
+    include/smctc/history.hh
+    include/smctc/mcmc.hh
+    include/smctc/moveset.hh
+    include/smctc/particle.hh
+    include/smctc/rng.hh
+    include/smctc/sampler.hh
+    include/smctc/smc-exception.hh
+    include/smctc/smctc.hh
+
+)
+
 set(SMCTC_SOURCE_FILES
   src/history.cc
   src/rng.cc
@@ -21,3 +33,13 @@ set(SMCTC_SOURCE_FILES
 add_library(smctc SHARED
             ${SMCTC_SOURCE_FILES})
 target_link_libraries(smctc ${GSL_LIBRARIES})
+
+install(TARGETS smctc
+  RUNTIME DESTINATION bin
+  LIBRARY DESTINATION lib
+  ARCHIVE DESTINATION lib
+)
+
+install(FILES ${SMCTC_HEADER_FILES}
+  DESTINATION include/smctc
+)
